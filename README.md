@@ -1,11 +1,3 @@
-# Terraform — Déploiement de Laboratoires Virtuels avec Terraform et Debian 12
-
-Projet pédagogique visant à automatiser, avec Terraform, le déploiement et la gestion de machines virtuelles Debian 12 sous VMware Workstation Pro, à l'aide du provider communautaire [`elsudano/vmworkstation`](https://registry.terraform.io/providers/elsudano/vmworkstation) (v1.0.4).
-
-**Environnement** : Linux Mint 22.3 (hôte) · VMware Workstation Pro · Terraform CLI
-
----
-
 ## Sommaire
 
 - [Étape 1 : Préparation de l'environnement](#étape-1--préparation-de-lenvironnement)
@@ -22,7 +14,7 @@ Projet pédagogique visant à automatiser, avec Terraform, le déploiement et la
 
 ### Objectif
 
-Avant d'écrire la moindre ligne de code Terraform, il faut disposer d'une VM Debian 12 de référence (le "template") que le provider VMware Workstation pourra cloner automatiquement. Terraform ne crée pas une VM depuis une ISO : il **clone** une VM existante déjà installée et configurée.
+Avant d'écrire la moindre ligne de code Terraform, nous allons créer une VM Debian 12 de référence (le "template") que le provider VMware Workstation pourra cloner automatiquement. Terraform ne crée pas une VM depuis une ISO : il **clone** une VM existante déjà installée et configurée.
 
 ### Prérequis de la VM template
 
