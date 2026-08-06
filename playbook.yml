@@ -1,0 +1,37 @@
+---
+- name: Configurer la VM attaquante
+  hosts: attaquant
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Mettre a jour le cache apt
+      apt:
+        update_cache: true
+
+    - name: Installer les outils de reconnaissance reseau
+      apt:
+        name:
+          - nmap
+          - masscan
+        state: present
+
+- name: Configurer la VM victime
+  hosts: victime
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Mettre a jour le cache apt
+      apt:
+        update_cache: true
+
+    - name: Installer python3
+      apt:
+        name: python3
+        state: present
+
+    - name: Lancer le serveur web vulnerable
+      shell: nohup python3 -m http.server 8080 < /dev/null > /tmp/http.log 2>&1 &
+      args:
+        executable: /bin/bash
+      async: 1
+      poll: 0

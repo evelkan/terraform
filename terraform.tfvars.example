@@ -1,0 +1,9 @@
+# Copiez ce fichier en "terraform.tfvars" et remplissez vos propres valeurs.
+# terraform.tfvars ne doit JAMAIS être commité (voir .gitignore).
+
+vmws_user         = "votre_utilisateur_vmrest"
+vmws_password     = "votre_mot_de_passe_vmrest"
+template_sourceid = "ID_recupere_via_GET_/api/vms"
+
+ssh_user     = "votre_utilisateur_ssh_debian"
+ssh_password = "votre_mot_de_passe_ssh_debian"

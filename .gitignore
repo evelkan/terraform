@@ -1,0 +1,14 @@
+# Fichiers contenant des secrets
+terraform.tfvars
+*.tfvars
+
+# Etat Terraform (peut contenir des donnees sensibles en clair)
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+
+# Repertoire local du provider
+.terraform/
+
+# Inventaire Ansible (contient des mots de passe)
+inventory.ini
